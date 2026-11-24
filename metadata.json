@@ -1,0 +1,6 @@
+{
+  "name": "SUARA HATI: JEJAK KASIH GURU",
+  "description": "Pengembaraan Dunia Sajak Tahun 5 — Aplikasi permainan pendidikan Bahasa Melayu (Seni Bahasa 4.2.2) bertemakan sajak Guruku Pelita Hidup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
