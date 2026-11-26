@@ -6,7 +6,8 @@ export type ViewMode =
   | 'misi3'
   | 'misi4'
   | 'misi5'
-  | 'misi6';
+  | 'misi6'
+  | 'kppb';
 
 export type ActiveModal = 'panduan' | 'objektif' | null;
 

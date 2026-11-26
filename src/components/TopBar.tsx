@@ -10,6 +10,7 @@ interface TopBarProps {
   reducedMotion: boolean;
   onNavigateUtama: () => void;
   onNavigateMisi: () => void;
+  onNavigateKppb: () => void;
   onOpenPanduan: () => void;
   onOpenObjektif: () => void;
   onToggleMusic: () => void;
@@ -23,6 +24,7 @@ export function TopBar({
   reducedMotion,
   onNavigateUtama,
   onNavigateMisi,
+  onNavigateKppb,
   onOpenPanduan,
   onOpenObjektif,
   onToggleMusic,
@@ -143,6 +145,14 @@ export function TopBar({
           >
             Misi
           </button>
+          <button
+            type="button"
+            onClick={onNavigateKppb}
+            aria-current={currentView === 'kppb' && activeModal === null ? 'page' : undefined}
+            className={navButtonClass(currentView === 'kppb' && activeModal === null)}
+          >
+            KPPB
+          </button>
         </nav>
 
         {/* Zon 3: Kawalan Animasi & Muzik latar + butang menu mudah alih */}
@@ -252,6 +262,15 @@ export function TopBar({
             )}
           >
             Misi
+          </button>
+          <button
+            type="button"
+            onClick={() => handleMobileAction(onNavigateKppb)}
+            className={`col-span-2 justify-center ${navButtonClass(
+              currentView === 'kppb' && activeModal === null
+            )}`}
+          >
+            KPPB
           </button>
         </nav>
       )}

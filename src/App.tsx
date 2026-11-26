@@ -5,6 +5,7 @@ import { CertificateModal } from './components/CertificateModal';
 import { CreditsModal } from './components/CreditsModal';
 import { GuideModal } from './components/GuideModal';
 import { HomeView } from './components/HomeView';
+import { KppbView } from './components/KppbView';
 import { Mission1View } from './components/Mission1View';
 import { Mission2View } from './components/Mission2View';
 import { Mission3View } from './components/Mission3View';
@@ -110,6 +111,13 @@ export default function App() {
   const handleNavigateMisi = useCallback(() => {
     setActiveModal(null);
     setCurrentView('misi');
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+  }, [reducedMotion]);
+
+  const handleNavigateKppb = useCallback(() => {
+    setActiveModal(null);
+    setPendingPreviewMissionId(null);
+    setCurrentView('kppb');
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   }, [reducedMotion]);
 
@@ -430,6 +438,7 @@ export default function App() {
         reducedMotion={reducedMotion}
         onNavigateUtama={handleNavigateUtama}
         onNavigateMisi={handleNavigateMisi}
+        onNavigateKppb={handleNavigateKppb}
         onOpenPanduan={() => setActiveModal('panduan')}
         onOpenObjektif={() => setActiveModal('objektif')}
         onToggleMusic={handleToggleMusic}
@@ -521,6 +530,13 @@ export default function App() {
           onOpenCertificate={handleOpenCertificateFromM6}
           onCardModalOpenChange={setIsCardModalOpen}
           onOpenAchievementSummary={() => setShowSummaryModal(true)}
+        />
+      )}
+
+      {currentView === 'kppb' && (
+        <KppbView
+          onBackHome={handleNavigateUtama}
+          onExploreOpd={handleNavigateMisi}
         />
       )}
 
